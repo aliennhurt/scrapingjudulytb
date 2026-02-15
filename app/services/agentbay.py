@@ -5,9 +5,7 @@ from typing import AsyncGenerator
 from app.core.config import settings
 
 # Strict Imports per Official Docs
-from agentbay import AgentBay
-from agentbay.session_params import CreateSessionParams
-from agentbay.browser.browser import BrowserOption
+from agentbay import AgentBay, CreateSessionParams, BrowserOption
 
 logger = logging.getLogger(__name__)
 
