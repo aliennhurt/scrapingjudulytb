@@ -14,9 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install Playwright browser and dependencies (Required by AgentBay SDK docs)
-RUN python -m playwright install chromium
-RUN python -m playwright install-deps chromium
+# NOTE: We use remote browser (AgentBay), so we do NOT install local chromium.
+# This saves space and build time.
 
 # Copy app code
 COPY . .
