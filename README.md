@@ -33,7 +33,7 @@ The application will attempt to create tables on startup. Alternatively, you can
 1.  **Clone Request**:
     ```bash
     git clone <repo_url>
-    cd backend
+    cd scrapingjudulytb
     ```
 
 2.  **Environment Variables**:
