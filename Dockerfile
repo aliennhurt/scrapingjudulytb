@@ -7,12 +7,16 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    libffi-dev \
+    libssl-dev \
+    python3-dev \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # NOTE: We use remote browser (AgentBay), so we do NOT install local chromium.
 # This saves space and build time.
